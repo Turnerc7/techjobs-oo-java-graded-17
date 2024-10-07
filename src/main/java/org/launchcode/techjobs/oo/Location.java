@@ -32,6 +32,15 @@ public class Location {
         return getId() == location.getId();
     }
 
+    public Location(String value) {
+        this();
+        this.value = Objects.requireNonNull(value, "Location cannot be null");
+    }
+
+    public Location(int id) {
+        this.id = id;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(getId());

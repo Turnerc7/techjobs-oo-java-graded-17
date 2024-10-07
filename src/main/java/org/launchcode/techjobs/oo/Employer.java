@@ -15,9 +15,13 @@ public class Employer {
 
     public Employer(String value) {
         this();
-        this.value = value;
+        setValue(value);
+//        if (value == null || value.trim().isEmpty()) {
+//            this.value = "Unknown";
+//        } else {
+//            this.value = value;
+//        }
     }
-
     // Custom toString, equals, and hashCode methods:
 
     @Override
