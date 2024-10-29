@@ -13,11 +13,18 @@ public class Location {
         nextId++;
     }
 
+
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
     //  constructor should also call the empty constructor in order to initialize the 'id' field.
 
 
     // Custom toString, equals, and hashCode methods:
+
+    public Location(int id, String value) {
+        this.id = id;
+        this.value = value;
+    }
+
 
     @Override
     public String toString() {
@@ -36,10 +43,14 @@ public class Location {
         this();
         this.value = Objects.requireNonNull(value, "Location cannot be null");
     }
+//public Location(String home) {
+//    this();
+//    this.value = Objects.requireNonNull(home, "Location cannot be null");
+//}
 
-    public Location(int id) {
-        this.id = id;
-    }
+//    public Location(int id) {
+//        this.id = id;
+//    }
 
     @Override
     public int hashCode() {
@@ -59,5 +70,7 @@ public class Location {
     public void setValue(String value) {
         this.value = value;
     }
+//public Location(String value) { this.value = value;}
+
 
 }

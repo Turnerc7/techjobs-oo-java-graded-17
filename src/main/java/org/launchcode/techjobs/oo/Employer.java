@@ -14,15 +14,8 @@ public class Employer {
     }
 
     public Employer(String value) {
-        this();
-        setValue(value);
-//        if (value == null || value.trim().isEmpty()) {
-//            this.value = "Unknown";
-//        } else {
-//            this.value = value;
-//        }
-    }
-    // Custom toString, equals, and hashCode methods:
+        this.value = value; }
+    public String getValue() { return value;}
 
     @Override
     public String toString() {
@@ -42,18 +35,26 @@ public class Employer {
         return Objects.hash(getId());
     }
 
-    // Getters and Setters:
-
     public int getId() {
         return id;
     }
 
-    public String getValue() {
-        return value;
-    }
+//    public String getValue() {
+//        return value;
+//    }
 
     public void setValue(String value) {
         this.value = value;
     }
+    //setValue(value);
+//        if (value == null || value.trim().isEmpty()) {
+//            this.value = "Unknown";
+//        } else {
+//            this.value = value;
+//        }
+    }
+    // Custom toString, equals, and hashCode methods:
 
-}
+// Getters and Setters:
+
+

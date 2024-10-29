@@ -21,11 +21,11 @@ public class Job {
     // Constructor to initialize all fields
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-        this.name = Objects.requireNonNull(name, "Name cannot be null");
-        this.employer = Objects.requireNonNull(employer, "Employer cannot be null");
-        this.location = Objects.requireNonNull(location, "Location cannot be null");
-        this.positionType = Objects.requireNonNull(positionType, "PositionType cannot be null");
-        this.coreCompetency = Objects.requireNonNull(coreCompetency, "CoreCompetency cannot be null");
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
     }
 
     @Override
@@ -54,39 +54,30 @@ public String toString() {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public Employer getEmployer() {
         return employer;
     }
-
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
-
     public Location getLocation() {
         return location;
     }
-
     public void setLocation(Location location) {
         this.location = location;
     }
-
     public PositionType getPositionType() {
         return positionType;
     }
-
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
-
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
-
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
