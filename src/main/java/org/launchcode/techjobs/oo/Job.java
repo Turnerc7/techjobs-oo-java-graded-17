@@ -12,7 +12,7 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // Default constructor to initialize unique ID
+
     public Job() {
         this.id = nextId;
         nextId++;

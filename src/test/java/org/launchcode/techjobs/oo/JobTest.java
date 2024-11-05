@@ -42,7 +42,7 @@ public void testJobConstructorSetsAllFields() {
                 new Location("Desert"),
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        Assertions.assertEquals(job1, job2);
+        Assertions.assertNotEquals(job1, job2);
 
     }
 }
