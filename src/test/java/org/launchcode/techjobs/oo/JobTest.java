@@ -53,8 +53,9 @@ public void testJobConstructorSetsAllFields() {
                 new Location("Desert"),
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        assertEquals(job1.toString(), System.lineSeparator());
-
+        int length = job1.toString().length();
+        assertEquals(job1.toString().substring(0,1), System.lineSeparator());
+    assertEquals(job1.toString().substring(length-2, length), System.lineSeparator());
 }
     @Test public void testToStringContainsCorrectLabelsAndData() {
         Job job1 = new Job("Product tester",
@@ -62,9 +63,24 @@ public void testJobConstructorSetsAllFields() {
                 new Location("Desert"),
                 new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        assertEquals
-
+String[] jobArray = job1.toString().split(System.lineSeparator());
+assertEquals(jobArray[1], "ID: " + job1.getId());
+        assertEquals(jobArray[2], "Name: Product tester");
+        assertEquals(jobArray[3], "Employer: ACME");
+        assertEquals(jobArray[4], "Location: Desert");
+        assertEquals(jobArray[5], "Position Type: Quality control");
+        assertEquals(jobArray[6], "Core Competency: Persistence");
     }
+@Test public void testToStringHandlesEmptyField() {
+        Job job1 = new Job();
+    String[] jobArray = job1.toString().split(System.lineSeparator());
+    assertEquals(jobArray[1], "ID: " + job1.getId());
+    assertEquals(jobArray[2], "Name: Data not available");
+    assertEquals(jobArray[3], "Employer: Data not available");
+    assertEquals(jobArray[4], "Location: Data not available");
+    assertEquals(jobArray[5], "Position Type: Data not available");
+    assertEquals(jobArray[6], "Core Competency: Data not available");
+}
 }
 
 

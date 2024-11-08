@@ -71,7 +71,30 @@ public class Job {
     }
 @Override
 public String toString() {
-        return System.lineSeparator();
+        if (name == null || name.trim().isEmpty()) {
+            name = "Data not available";
+        }
+        if (employer == null || employer.getValue().isEmpty()) {
+            employer = new Employer("Data not available");
+        }
+        if (location == null || location.getValue().isEmpty()) {
+            location = new Location("Data not available");
+        }
+        if (positionType == null || positionType.getValue().isEmpty()) {
+            positionType = new PositionType("Data not available");
+        }
+        if (coreCompetency == null || coreCompetency.getValue().isEmpty()) {
+            coreCompetency = new CoreCompetency("Data not available");
+        }
+        return System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + name + System.lineSeparator() +
+                "Employer: " + employer + System.lineSeparator() +
+                "Location: " + location + System.lineSeparator() +
+                "Position Type: " + positionType + System.lineSeparator() +
+                "Core Competency: " + coreCompetency + System.lineSeparator();
+
+
 
 }
     // Getters and Setters
