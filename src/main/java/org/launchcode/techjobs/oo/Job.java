@@ -13,6 +13,31 @@ public class Job {
     private CoreCompetency coreCompetency;
 
 
+
+//    public class JobFormat {
+//    public static String format(Job job) {
+//System.lineSeparator();
+//return "";
+//
+//    }
+//}
+
+    private static String checkIfEmpty(String field) {
+        return (field == null || field.trim().isEmpty()) ? "Data not available" : field;
+    }
+
+    public static void main(String[] args) {
+        Job job = new Job();
+        // Set job fields here
+
+        System.out.println(formatJob(job));
+    }
+
+    private static boolean formatJob(Job job) {
+        return false;
+    }
+
+
     public Job() {
         this.id = nextId;
         nextId++;
@@ -46,9 +71,8 @@ public class Job {
     }
 @Override
 public String toString() {
-        return "Job{" +
-                "id=" + id +
-                '}';
+        return System.lineSeparator();
+
 }
     // Getters and Setters
     public String getName() {

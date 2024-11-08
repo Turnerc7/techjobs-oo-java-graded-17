@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class JobTest {
     //TODO: Create your unit tests here
@@ -45,6 +47,25 @@ public void testJobConstructorSetsAllFields() {
         Assertions.assertNotEquals(job1, job2);
 
     }
+@Test public void testToStringStartsAndEndsWithNewLine(){
+        Job job1 = new Job("Product tester",
+                new Employer("ACME"),
+                new Location("Desert"),
+                new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+        assertEquals(job1.toString(), System.lineSeparator());
+
 }
+    @Test public void testToStringContainsCorrectLabelsAndData() {
+        Job job1 = new Job("Product tester",
+                new Employer("ACME"),
+                new Location("Desert"),
+                new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+        assertEquals
+
+    }
+}
+
 
 
