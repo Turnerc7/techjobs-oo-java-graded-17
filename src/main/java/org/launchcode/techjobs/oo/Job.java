@@ -1,9 +1,6 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
-
-public class Job {
+public class Job extends JobField {
     private final int id;
     private static int nextId = 1;
     private String name;
@@ -11,7 +8,6 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
-
 
 
 //    public class JobFormat {
@@ -61,16 +57,13 @@ public class Job {
         return id == job.id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
     public int getId() {
         return id;
     }
-@Override
-public String toString() {
+
+    @Override
+    public String toString() {
         if (name == null || name.trim().isEmpty()) {
             name = "Data not available";
         }
@@ -95,36 +88,45 @@ public String toString() {
                 "Core Competency: " + coreCompetency + System.lineSeparator();
 
 
+    }
 
-}
     // Getters and Setters
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public Employer getEmployer() {
         return employer;
     }
+
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
+
     public Location getLocation() {
         return location;
     }
+
     public void setLocation(Location location) {
         this.location = location;
     }
+
     public PositionType getPositionType() {
         return positionType;
     }
+
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
+
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
+
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }

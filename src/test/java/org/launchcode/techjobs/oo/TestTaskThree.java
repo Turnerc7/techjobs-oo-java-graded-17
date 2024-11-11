@@ -1,6 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import mockit.Expectations;
 import mockit.Mocked;
 import org.junit.Test;
 
@@ -15,7 +14,9 @@ import static org.junit.Assert.*;
  * Created by LaunchCode
  */
 public class TestTaskThree extends AbstractTest {
-    @Mocked Job job;
+    @Mocked
+    Job job;
+
     @Test
     public void testHasNoArgConstructor() throws ClassNotFoundException {
         Class jobClass = getClassByName("Job");
@@ -29,7 +30,7 @@ public class TestTaskThree extends AbstractTest {
     }
 
     @Test
-    public void testNoArgConstructorInitializesIdField () throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+    public void testNoArgConstructorInitializesIdField() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Class jobClass = getClassByName("Job");
         Constructor<Job> noArgConstructor = jobClass.getConstructor();
         Job job = noArgConstructor.newInstance();
@@ -39,7 +40,7 @@ public class TestTaskThree extends AbstractTest {
     }
 
     @Test
-    public void testNoArgConstructorSetsUniqueIds () throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+    public void testNoArgConstructorSetsUniqueIds() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Class jobClass = getClassByName("Job");
         Constructor<Job> noArgConstructor = jobClass.getConstructor();
         Job aJob = noArgConstructor.newInstance();
@@ -75,7 +76,7 @@ public class TestTaskThree extends AbstractTest {
                 PositionType.class,
                 CoreCompetency.class);
 
-        Job aJob = createJob ("Name", "Employer", "Location", "Position Type", "Core Competency");
+        Job aJob = createJob("Name", "Employer", "Location", "Position Type", "Core Competency");
 
         assertNotNull(getJobFieldString(aJob, "name", false));
         assertNotNull(getJobFieldString(aJob, "employer", false));
@@ -225,15 +226,15 @@ public class TestTaskThree extends AbstractTest {
             fail("Job does not declare an equals method");
         }
 
-        assertTrue(job.equals(job));
-        assertFalse(job.equals(anotherJob));
+        assertEquals(job, job);
+        assertNotEquals(job, anotherJob);
         assertNotEquals(getJobId(job), getJobId(anotherJob));
 
         // Use reflection to make both objects have the same id and test
         Field anotherJobIdField = Job.class.getDeclaredField("id");
         anotherJobIdField.setAccessible(true);
         anotherJobIdField.set(anotherJob, getJobId(job));
-        assertTrue(job.equals(anotherJob));
+        assertEquals(job, anotherJob);
     }
 
     @Test
