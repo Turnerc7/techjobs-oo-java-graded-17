@@ -10,13 +10,6 @@ public class Job extends JobField {
     private CoreCompetency coreCompetency;
 
 
-//    public class JobFormat {
-//    public static String format(Job job) {
-//System.lineSeparator();
-//return "";
-//
-//    }
-//}
 
     private static String checkIfEmpty(String field) {
         return (field == null || field.trim().isEmpty()) ? "Data not available" : field;

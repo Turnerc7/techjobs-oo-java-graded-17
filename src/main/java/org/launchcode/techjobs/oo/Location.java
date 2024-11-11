@@ -42,19 +42,6 @@ public class Location extends JobField {
         this();
         this.value = Objects.requireNonNull(value, "Location cannot be null");
     }
-//public Location(String home) {
-//    this();
-//    this.value = Objects.requireNonNull(home, "Location cannot be null");
-//}
-
-//    public Location(int id) {
-//        this.id = id;
-//    }
-
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(getId());
-//    }
 
     // Getters and Setters:
 
@@ -65,11 +52,6 @@ public class Location extends JobField {
     public String getValue() {
         return value;
     }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-//public Location(String value) { this.value = value;}
 
 
 }
