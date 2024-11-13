@@ -10,8 +10,7 @@ public abstract class JobField {
 //    }
 
     public JobField() {
-        // Initialize with default values
-        // For instance, this might auto-generate IDs based on a static counter or some other logic
+
         this.id = generateId();
         this.value = "";
     }
@@ -33,10 +32,7 @@ public abstract class JobField {
         return value;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -49,7 +45,9 @@ public abstract class JobField {
     @Override
     public String toString() {
         return value;
+
     }
+
 
 }
 

@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.Objects;
+
 public class Job extends JobField {
     private final int id;
     private static int nextId = 1;
@@ -9,7 +11,10 @@ public class Job extends JobField {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 
     private static String checkIfEmpty(String field) {
         return (field == null || field.trim().isEmpty()) ? "Data not available" : field;
@@ -74,7 +79,7 @@ public class Job extends JobField {
         }
         return System.lineSeparator() +
                 "ID: " + id + System.lineSeparator() +
-                "Name: " + name + System.lineSeparator() +
+                "Name: " +  name + System.lineSeparator() +
                 "Employer: " + employer + System.lineSeparator() +
                 "Location: " + location + System.lineSeparator() +
                 "Position Type: " + positionType + System.lineSeparator() +

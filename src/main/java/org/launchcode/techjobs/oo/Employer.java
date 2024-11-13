@@ -14,7 +14,9 @@ public class Employer extends JobField {
     public Employer(String value) {
         this.value = value;
     }
-
+    public String getValue() {
+        return value;
+    }
 
     @Override
     public String toString() {
